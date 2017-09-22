@@ -10,7 +10,15 @@ import Html
         , span
         , br
         )
-import Html.Attributes exposing (class, src, value, type_, attribute)
+import Html.Attributes
+    exposing
+        ( class
+        , placeholder
+        , src
+        , value
+        , type_
+        , attribute
+        )
 import Html.Events exposing (onInput, onClick, onFocus)
 import Update exposing (Msg)
 import Model exposing (Model)
@@ -67,17 +75,28 @@ listView model =
 
 searchForm : Model -> Html Msg
 searchForm model =
-    div [ class "search-bar input-group input-group-lg", attribute "data-toggle" "collapse" ]
-        [ span [ class "input-group-addon" ] [ text "Search" ]
-        , input
-            [ type_ "text"
-            , class "form-control"
-            , onInput InputQuery
-            , onFocus FocusQuery
-            , value model.query
+    let
+        glyphSearchIcon =
+            span [ class "glyphicon glyphicon-search", attribute "aria-hidden" "true" ] []
+
+        placeholder_text =
+            if model.focus then
+                "Search title/speaker"
+            else
+                "Click to view the list"
+    in
+        div [ class "search-bar input-group input-group-lg", attribute "data-toggle" "collapse" ]
+            [ span [ class "input-group-addon" ] [ glyphSearchIcon ]
+            , input
+                [ type_ "text"
+                , class "form-control"
+                , onInput InputQuery
+                , onFocus FocusQuery
+                , value model.query
+                , placeholder placeholder_text
+                ]
+                []
             ]
-            []
-        ]
 
 
 videoListView : Model -> Html Msg

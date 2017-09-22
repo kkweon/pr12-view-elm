@@ -8,7 +8,7 @@
         "start": "webpack-dev-server --inline --hot",
         "test": "echo \"Error: no test specified\" && exit 1",
         "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
-        "gh-page": "ghp-import public/ --push"
+        "gh-page": "npm run build && ghp-import public/ --push"
     },
     "author": "",
     "license": "MIT",

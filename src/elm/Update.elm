@@ -17,7 +17,7 @@ update msg model =
             { model | query = query } ! []
 
         ClickVideo video ->
-            { model | currentVideo = Just video, focus = False } ! []
+            { model | currentVideo = Just video, focus = False, query = "" } ! []
 
         FocusQuery ->
             { model | focus = True } ! []
