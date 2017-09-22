@@ -3,3 +3,5 @@
 /__pycache__/test_read_data.cpython-36-PYTEST.pyc
 elm-stuff/
 node_modules/*
+public/
+src/elm/Database.elm

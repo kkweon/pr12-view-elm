@@ -72,8 +72,9 @@ module Database exposing (..)
 
 type alias Video =
     {{ id : String
+    , title : String
     , speaker : String
-    , link : link
+    , link : String
     }}
 
 videoList : List Video
