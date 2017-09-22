@@ -1,0 +1,14 @@
+#+TITLE: PR-12 View
+
+- elm 연습할 겸
+- PR12 트래킹 할겸
+
+* Build data file (=data.yaml=)
+#+BEGIN_SRC bash
+npm run elm
+#+END_SRC
+
+* Serve
+#+BEGIN_SRC bash
+npm start
+#+END_SRC
