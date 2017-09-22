@@ -1,0 +1,5 @@
+.cache/
+/__pycache__/read_data.cpython-36.pyc
+/__pycache__/test_read_data.cpython-36-PYTEST.pyc
+elm-stuff/
+node_modules/*
