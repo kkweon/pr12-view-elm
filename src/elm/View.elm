@@ -156,6 +156,8 @@ videoScreen model =
                         div [ class "screen col-md-10 embed-responsive embed-responsive-16by9" ]
                             [ iframe
                                 [ class "iframe-video embed-responsive-item"
+                                , attribute "frameborder" "0"
+                                , attribute "allowfullscreen" ""
                                 , src (getEmbedUrl key)
                                 ]
                                 []
