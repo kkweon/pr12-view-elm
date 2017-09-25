@@ -1,75 +1,16 @@
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    height: 98%;
-    font-family: "Nanum Gothic", sans-serif;
-    background-color: #111;
-}
-
 .list-group-item-heading {
-    font-weight: 700;
-    font-size: 120%;
+  font-weight: bold;
 }
 
-.container-fluid {
-    height: 98%;
-    margin-top: 2%;
-}
-
-#app {
-    position:relative;
-    height: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
-    $top-search-height: 30%;
-    .div-top-search {
-        max-height: $top-search-height;
-        display: block;
+$side-bar-width: 20%;
+@media (min-width: 1024px) {
+    .list {
+        width: $side-bar-width;
     }
-
     .screen {
-        display: block;
-        height: 100% - $top-search-height;
-        .youtube {
-            height: 100%;
-            width: 100%;
-        }
+        margin-left: $side-bar-width;
+        padding-bottom: 50%;
+        position: fixed;
+        width: 100 - $side-bar-width;
     }
-}
-
-.video-row.list-group-item {
-    text-shadow: none;
-    transition: background-color 0.1s, color 0.1s;
-}
-
-.video-row.list-group-item.active {
-    background-color: #888787 !important;
-    background-image: none;
-    border: none;
-}
-
-.search-bar {
-    border: 1px solid black;
-}
-
-.input-group-addon {
-    background-color: #fff;
-    border: 0;
-}
-
-.form-control {
-    border: 0;
-    outline: none;
-}
-
-*:focus,
-*:active {
-    outline: none;
-    border: 0;
 }
