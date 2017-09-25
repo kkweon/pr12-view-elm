@@ -1,26 +1,27 @@
 {
-    "name": "pr-12",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "build": "webpack",
-        "start": "webpack-dev-server --inline --hot",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
-        "gh-page": "npm run build && ghp-import public/ --push"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "css-loader": "^0.28.7",
-        "elm-webpack-loader": "^4.3.1",
-        "extract-text-webpack-plugin": "^3.0.0",
-        "html-webpack-plugin": "^2.30.1",
-        "node-sass": "^4.5.3",
-        "sass-loader": "^6.0.6",
-        "style-loader": "^0.18.2",
-        "webpack": "^3.6.0",
-        "webpack-dev-server": "^2.8.2"
-    }
+  "name": "pr-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
+    "gh-page": "npm run build && ghp-import public/ --push"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "elm-webpack-loader": "^4.3.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
 }

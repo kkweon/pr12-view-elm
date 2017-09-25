@@ -57,16 +57,14 @@ filterVideoList query videoList =
 view : Model -> Html Msg
 view model =
     div [ class "container-fluid" ]
-        [ div [ class "row" ]
-            [ listView model
-            , videoScreen model
-            ]
+        [ listView model
+        , videoScreen model
         ]
 
 
 listView : Model -> Html Msg
 listView model =
-    div [ class "list col-md-2" ]
+    div [ class "div-top-search" ]
         [ searchForm model
         , br [] []
         , videoListView model
@@ -85,7 +83,7 @@ searchForm model =
             else
                 "Click to view the list"
     in
-        div [ class "search-bar input-group input-group-lg", attribute "data-toggle" "collapse" ]
+        div [ class "input-group input-group-lg search-bar", attribute "data-toggle" "collapse" ]
             [ span [ class "input-group-addon" ] [ glyphSearchIcon ]
             , input
                 [ type_ "text"
@@ -172,9 +170,9 @@ videoScreen model =
                         text ""
 
                     Just key ->
-                        div [ class "screen col-md-10 embed-responsive embed-responsive-16by9" ]
+                        div [ class "screen" ]
                             [ iframe
-                                [ class "iframe-video embed-responsive-item"
+                                [ class "youtube"
                                 , attribute "frameborder" "0"
                                 , attribute "allowfullscreen" ""
                                 , src (getEmbedUrl key)
