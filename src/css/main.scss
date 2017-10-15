@@ -1,12 +1,15 @@
-@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Nanum Barun Gothic", sans-serif;
+#app {
+    font-family: "Nanum Barun Gothic", sans-serif !important;
+}
+
+input::placeholder {
+    font-family: "Nanum Barun Gothic", sans-serif !important;
 }
 
 .list-group-item-heading {
