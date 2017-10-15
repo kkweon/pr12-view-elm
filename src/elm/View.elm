@@ -81,9 +81,9 @@ searchForm model =
 
         placeholder_text =
             if model.focus then
-                "Search title/speaker"
+                "제목 혹은 발표자 검색"
             else
-                "Click to view the list"
+                "목록 보기"
     in
         div [ class "search-bar input-group input-group-lg", attribute "data-toggle" "collapse" ]
             [ span [ class "input-group-addon" ] [ glyphSearchIcon ]

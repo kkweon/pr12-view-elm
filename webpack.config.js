@@ -1,9 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OUTPUT_DIR = "public";
 
-
-const OUTPUT_DIR = "public"
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -27,7 +26,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
-                    use: ["css-loader", "sass-loader"],
+                    use: ["css-loader", "postcss-loader", "sass-loader"],
                     fallback: "style-loader"
                 })
             }
@@ -37,6 +36,6 @@ module.exports = {
         contentBase: path.join(__dirname, OUTPUT_DIR),
         compress: true,
         port: 9000,
-        open: true,
+        open: true
     }
 };
