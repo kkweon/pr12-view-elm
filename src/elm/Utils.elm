@@ -12,7 +12,7 @@ getKey url =
     let
         listMatched : List Regex.Match
         listMatched =
-            find Regex.All (regex "v=([A-z0-9]+)") url
+            find Regex.All (regex "v=([-A-z0-9]+)") url
     in
         listMatched
             |> List.head
