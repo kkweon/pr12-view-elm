@@ -6,7 +6,7 @@
     "scripts": {
         "build": "webpack --optimize-minimize",
         "start": "webpack-dev-server --inline --hot",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "elm-test",
         "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
         "gh-page": "npm run build && ghp-import public/ --push"
     },
