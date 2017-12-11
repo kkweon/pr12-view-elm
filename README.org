@@ -1,4 +1,5 @@
 #+TITLE: PR-12 App in Elm
+#+HTML: <img src="https://travis-ci.org/kkweon/pr12.svg?branch=master" alt="build status" />
 
 Hosted at https://kkweon.github.io/pr12-web-app-elm/
 
