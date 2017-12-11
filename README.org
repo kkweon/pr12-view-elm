@@ -1,7 +1,7 @@
 #+TITLE: PR-12 App in Elm
 #+HTML: <img src="https://travis-ci.org/kkweon/pr12.svg?branch=master" alt="build status" />
 
-Hosted at https://kkweon.github.io/pr12-web-app-elm/
+Hosted at https://kkweon.github.io/pr12
 
 * What is PR-12?
 PR-12 is the reading/study group organized in [[https://www.facebook.com/groups/TensorFlowKR/][Tensorflow KR Facebook Group]].
