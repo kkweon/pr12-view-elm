@@ -7,6 +7,7 @@ import Html
         , iframe
         , text
         , input
+        , button
         , span
         , br
         )
@@ -16,10 +17,12 @@ import Html.Attributes
         , placeholder
         , src
         , value
+        , style
         , type_
         , attribute
         )
-import Html.Events exposing (onInput, onClick, onFocus)
+import Html.Events exposing (onInput, onClick, onFocus, on, keyCode)
+import Json.Decode as Json
 import Update exposing (Msg)
 import Model exposing (Model)
 import Utils exposing (getKey, getEmbedUrl)
@@ -33,11 +36,15 @@ import Update
 -- View
 
 
+{-| If Video contains query in the title or speaker or id, return True
+-}
 isRelateVideo : String -> Video -> Bool
 isRelateVideo query video =
     let
         lowerQuery =
-            String.toLower query
+            query
+                |> String.trim
+                |> String.toLower
     in
         [ video.title, video.speaker, video.id ]
             |> List.map String.toLower
@@ -57,7 +64,7 @@ filterVideoList query videoList =
 view : Model -> Html Msg
 view model =
     div [ class "container-fluid" ]
-        [ div [ class "row" ]
+        [ div [ class "row mt-3" ]
             [ listView model
             , videoScreen model
             ]
@@ -66,36 +73,75 @@ view model =
 
 listView : Model -> Html Msg
 listView model =
-    div [ class "list col-md-2" ]
+    div [ class "col-md-3 mb-3" ]
         [ searchForm model
-        , br [] []
         , videoListView model
         ]
+
+
+onKeyDown : (Int -> msg) -> Html.Attribute msg
+onKeyDown tagger =
+    on "keydown" (Json.map tagger keyCode)
+
+
+glyphSearchIcon : Html msg
+glyphSearchIcon =
+    span [ class "fa fa-search", attribute "aria-hidden" "true" ] []
+
+
+glyphSearchSpan : Html msg
+glyphSearchSpan =
+    span
+        [ class "input-group-addon border-0 bg-transparent position-absolute"
+        , style
+            [ ( "left", "3px" )
+            , ( "top", "4px" )
+            , ( "z-index", "999" )
+            ]
+        ]
+        [ glyphSearchIcon ]
+
+
+clearButton : Model -> Html Msg
+clearButton model =
+    if not (String.isEmpty model.query) then
+        button
+            [ type_ "button"
+            , class "close position-absolute"
+            , style [ ( "right", "0" ), ( "top", "10px" ), ( "z-index", "999" ) ]
+            , onClick ClearInput
+            , attribute "aria-label" "Close"
+            ]
+            [ span [ attribute "aria-hidden" "true" ] [ text "×" ] ]
+    else
+        text ""
 
 
 searchForm : Model -> Html Msg
 searchForm model =
     let
-        glyphSearchIcon =
-            span [ class "glyphicon glyphicon-search", attribute "aria-hidden" "true" ] []
-
         placeholder_text =
             if model.focus then
                 "제목 혹은 발표자 검색"
             else
                 "목록 보기"
-    in
-        div [ class "search-bar input-group input-group-lg", attribute "data-toggle" "collapse" ]
-            [ span [ class "input-group-addon" ] [ glyphSearchIcon ]
-            , input
+
+        inputBox =
+            input
                 [ type_ "text"
-                , class "form-control"
+                , class "form-control pl-5 input-search"
                 , onInput InputQuery
+                , onKeyDown OnKeyDown
                 , onFocus FocusQuery
                 , value model.query
                 , placeholder placeholder_text
                 ]
                 []
+    in
+        div [ class "input-group input-group-lg mb-3" ]
+            [ glyphSearchSpan
+            , inputBox
+            , clearButton model
             ]
 
 
@@ -105,7 +151,7 @@ videoListView model =
         |> filterVideoList model.query
         |> List.sortWith compareId
         |> List.map (videoSingleRowView model)
-        |> div [ class "video-list list-group" ]
+        |> div [ class "list-group" ]
 
 
 compareId : Video -> Video -> Order
@@ -134,9 +180,9 @@ videoSingleRowView model video =
 
         aClass =
             if isActive then
-                "video-row list-group-item active"
+                "list-group-item list-group-item-action text-white active"
             else
-                "video-row list-group-item"
+                "list-group-item list-group-item-action"
 
         hide =
             (not isActive) && (not model.focus)
@@ -147,11 +193,9 @@ videoSingleRowView model video =
 
             False ->
                 Html.a [ class aClass, onClick (ClickVideo video) ]
-                    [ div [ class "video-title list-group-item-heading" ] [ text video.title ]
-                    , div [ class "video-list-sub-heading" ] [ text video.id ]
-                    , div [ class "video-speaker" ] [ text <| "발표자: " ++ video.speaker ]
-
-                    -- , div [ class "video-link" ] [ text video.link ]
+                    [ div [ class "font-weight-bold" ] [ text video.title ]
+                    , div [ class "text-muted" ] [ text video.id ]
+                    , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
                     ]
 
 
@@ -172,12 +216,14 @@ videoScreen model =
                         text ""
 
                     Just key ->
-                        div [ class "screen col-md-10 embed-responsive embed-responsive-16by9" ]
-                            [ iframe
-                                [ class "iframe-video embed-responsive-item"
-                                , attribute "frameborder" "0"
-                                , attribute "allowfullscreen" ""
-                                , src (getEmbedUrl key)
+                        div
+                            [ class "col-md-8" ]
+                            [ div [ class "embed-responsive embed-responsive-16by9" ]
+                                [ iframe
+                                    [ class "iframe-video embed-responsive-item"
+                                    , attribute "allowfullscreen" ""
+                                    , src (getEmbedUrl key)
+                                    ]
+                                    []
                                 ]
-                                []
                             ]

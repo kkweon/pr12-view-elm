@@ -1,3 +1,5 @@
+import "bootstrap";
+
 var Elm = require("./elm/Main.elm");
 require("./css/main.scss");
 var mountNode = document.getElementById("app");
