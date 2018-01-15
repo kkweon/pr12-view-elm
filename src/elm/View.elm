@@ -1,19 +1,11 @@
 module View exposing (..)
 
-import Html
-    exposing
-        ( div
-        , Html
-        , iframe
-        , text
-        , input
-        , button
-        , span
-        , br
-        )
-import Html.Attributes
+import Css exposing (..)
+import Html.Styled exposing (..)
+import Html.Styled.Attributes
     exposing
         ( class
+        , css
         , placeholder
         , src
         , value
@@ -21,7 +13,7 @@ import Html.Attributes
         , type_
         , attribute
         )
-import Html.Events exposing (onInput, onClick, onFocus, on, keyCode)
+import Html.Styled.Events exposing (onInput, onClick, onFocus, on, keyCode)
 import Json.Decode as Json
 import Update exposing (Msg)
 import Model exposing (Model)
@@ -79,27 +71,38 @@ listView model =
         ]
 
 
-onKeyDown : (Int -> msg) -> Html.Attribute msg
+onKeyDown : (Int -> msg) -> Html.Styled.Attribute msg
 onKeyDown tagger =
     on "keydown" (Json.map tagger keyCode)
 
 
+faBuilder : String -> Html msg
+faBuilder name =
+    span [ class ("fa " ++ name), attribute "aria-hidden" "true" ] []
+
+
 glyphSearchIcon : Html msg
 glyphSearchIcon =
-    span [ class "fa fa-search", attribute "aria-hidden" "true" ] []
+    faBuilder "fa-search"
 
 
-glyphSearchSpan : Html msg
-glyphSearchSpan =
+glyphMenuIcon : Html msg
+glyphMenuIcon =
+    faBuilder "fa-bars"
+
+
+spanBuilder : Html Msg -> Html Msg
+spanBuilder icon =
     span
         [ class "input-group-addon border-0 bg-transparent position-absolute"
-        , style
-            [ ( "left", "3px" )
-            , ( "top", "4px" )
-            , ( "z-index", "999" )
+        , css
+            [ left (px 3)
+            , top (px 4)
+            , zIndex (int 999)
             ]
+        , onClick FocusQuery
         ]
-        [ glyphSearchIcon ]
+        [ icon ]
 
 
 clearButton : Model -> Html Msg
@@ -108,7 +111,11 @@ clearButton model =
         button
             [ type_ "button"
             , class "close position-absolute"
-            , style [ ( "right", "0" ), ( "top", "10px" ), ( "z-index", "999" ) ]
+            , css
+                [ right (pct 2)
+                , top (px 10)
+                , zIndex (int 999)
+                ]
             , onClick ClearInput
             , attribute "aria-label" "Close"
             ]
@@ -129,7 +136,7 @@ searchForm model =
         inputBox =
             input
                 [ type_ "text"
-                , class "form-control pl-5 input-search"
+                , class "form-control pl-5 search-box"
                 , onInput InputQuery
                 , onKeyDown OnKeyDown
                 , onFocus FocusQuery
@@ -137,9 +144,15 @@ searchForm model =
                 , placeholder placeholder_text
                 ]
                 []
+
+        spanIcon =
+            if model.focus then
+                spanBuilder glyphSearchIcon
+            else
+                spanBuilder glyphMenuIcon
     in
         div [ class "input-group input-group-lg mb-3" ]
-            [ glyphSearchSpan
+            [ spanIcon
             , inputBox
             , clearButton model
             ]
@@ -192,9 +205,9 @@ videoSingleRowView model video =
                 text ""
 
             False ->
-                Html.a [ class aClass, onClick (ClickVideo video) ]
+                a [ class aClass, onClick (ClickVideo video) ]
                     [ div [ class "font-weight-bold" ] [ text video.title ]
-                    , div [ class "text-muted" ] [ text video.id ]
+                    , div [ class "font-weight-italic" ] [ text video.id ]
                     , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
                     ]
 
