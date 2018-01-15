@@ -10,15 +10,15 @@ Current playlist is hosted in the [[https://www.youtube.com/playlist?list=PLlMkM
 
 * Dependencies
 #+BEGIN_SRC bash
-npm i
+yarn
 #+END_SRC
 
 * Build data file (=data.yaml=)
 #+BEGIN_SRC bash
-npm run elm
+yarn run elm
 #+END_SRC
 
 * Serve
 #+BEGIN_SRC bash
-npm start
+yarn start
 #+END_SRC
