@@ -224,19 +224,24 @@ videoScreen model =
                     vid.link
                         |> getKey
             in
-                case vidKey of
-                    Nothing ->
-                        text ""
+                getEmbedYoutube vidKey
 
-                    Just key ->
-                        div
-                            [ class "col-md-8" ]
-                            [ div [ class "embed-responsive embed-responsive-16by9" ]
-                                [ iframe
-                                    [ class "iframe-video embed-responsive-item"
-                                    , attribute "allowfullscreen" ""
-                                    , src (getEmbedUrl key)
-                                    ]
-                                    []
-                                ]
-                            ]
+
+getEmbedYoutube : Maybe String -> Html msg
+getEmbedYoutube videoKey =
+    case videoKey of
+        Nothing ->
+            text ""
+
+        Just key ->
+            div
+                [ class "col-md-9" ]
+                [ div [ class "embed-responsive embed-responsive-16by9" ]
+                    [ iframe
+                        [ class "iframe-video embed-responsive-item"
+                        , attribute "allowfullscreen" ""
+                        , src (getEmbedUrl key)
+                        ]
+                        []
+                    ]
+                ]

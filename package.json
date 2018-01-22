@@ -5,10 +5,10 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack --optimize-minimize",
-        "start": "webpack-dev-server --inline --hot",
+        "start": "yarn elm && webpack-dev-server --inline --hot",
         "test": "elm-test",
         "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
-        "gh-page": "yarn run elm && yarn run build && ghp-import public/ --push"
+        "gh-page": "yarn elm && yarn run build && ghp-import public/ --push"
     },
     "author": "",
     "license": "MIT",
