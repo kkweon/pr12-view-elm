@@ -205,7 +205,9 @@ videoSingleRowView model video =
                 text ""
 
             False ->
-                a [ class aClass, onClick (ClickVideo video) ]
+                a [ class aClass
+                  , css [cursor pointer]
+                  , onClick (ClickVideo video) ]
                     [ div [ class "font-weight-bold" ] [ text video.title ]
                     , div [ class "font-weight-italic" ] [ text video.id ]
                     , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
