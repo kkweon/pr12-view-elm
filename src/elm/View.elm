@@ -94,11 +94,13 @@ glyphMenuIcon =
 spanBuilder : Html Msg -> Html Msg
 spanBuilder icon =
     span
-        [ class "input-group-addon border-0 bg-transparent position-absolute"
+        [ class "input-group-addon border-0 bg-transparent p-0"
         , css
-            [ left (px 3)
-            , top (px 4)
+            [ left (Css.rem 1)
+            , top (pct 50)
             , zIndex (int 999)
+            , position absolute
+            , transform (translateY (pct -50))
             ]
         , onClick FocusQuery
         ]
@@ -110,10 +112,11 @@ clearButton model =
     if not (String.isEmpty model.query) then
         button
             [ type_ "button"
-            , class "close position-absolute"
+            , class "close position-absolute p-0"
             , css
                 [ right (pct 2)
-                , top (px 10)
+                , top (pct 50)
+                , transform (translateY (pct -50))
                 , zIndex (int 999)
                 ]
             , onClick ClearInput
@@ -151,7 +154,7 @@ searchForm model =
             else
                 spanBuilder glyphMenuIcon
     in
-        div [ class "input-group input-group-lg mb-3" ]
+        div [ class "input-group input-group-lg mb-3", css [ (position relative) ] ]
             [ spanIcon
             , inputBox
             , clearButton model
@@ -205,9 +208,11 @@ videoSingleRowView model video =
                 text ""
 
             False ->
-                a [ class aClass
-                  , css [cursor pointer]
-                  , onClick (ClickVideo video) ]
+                a
+                    [ class aClass
+                    , css [ cursor pointer ]
+                    , onClick (ClickVideo video)
+                    ]
                     [ div [ class "font-weight-bold" ] [ text video.title ]
                     , div [ class "font-weight-italic" ] [ text video.id ]
                     , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
