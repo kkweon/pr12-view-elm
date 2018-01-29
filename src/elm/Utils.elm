@@ -1,12 +1,12 @@
 module Utils exposing (..)
 
+import Html.Styled exposing (Attribute)
+import Html.Styled.Events exposing (on, keyCode)
+import Json.Decode as Json
 import Regex exposing (find, HowMany, regex, Match)
 
 
-temp =
-    "https://www.youtube.com/watch?v=auKdde7Anr8&list=PLlMkM4tgfjnJhhd4wn5aj8fVTYJwIpWkS"
-
-
+-- | Get Key from youtube URL
 getKey : String -> Maybe String
 getKey url =
     let
@@ -22,6 +22,12 @@ getKey url =
             |> Maybe.withDefault Nothing
 
 
+-- | Generate an embeded URL
 getEmbedUrl : String -> String
 getEmbedUrl url =
     "https://www.youtube.com/embed/" ++ url
+
+
+onKeyDown : (Int -> msg) -> Html.Styled.Attribute msg
+onKeyDown tagger =
+    on "keydown" (Json.map tagger keyCode)
