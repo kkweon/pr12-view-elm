@@ -1,6 +1,7 @@
 module View.ListVideo exposing (..)
 
 import Css exposing (..)
+import Css.Media as Media exposing (withMedia, screen, only)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (..)
 import Html.Styled.Events exposing (..)
@@ -48,13 +49,21 @@ compareId a b =
             LT
 
 
+scrollOnDesktop : Attribute msg
+scrollOnDesktop =
+    css
+        [ withMedia [ only screen [ Media.minWidth (px 900) ] ]
+            [ (overflowY auto), (maxHeight (vh 90)) ]
+        ]
+
+
 videoListView : Model -> Html Msg
 videoListView model =
     model.videoList
         |> filterVideoList model.query
         |> List.sortWith compareId
         |> List.map (videoSingleRowView model)
-        |> div [ class "list-group" ]
+        |> div [ class "list-group", scrollOnDesktop ]
 
 
 videoSingleRowView : Model -> Video -> Html Msg
