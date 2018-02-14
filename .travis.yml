@@ -8,7 +8,7 @@ cache:
   yarn: true
 
 before_script:
-  - npm install -g elm elm-test
+  - yarn global add elm elm-test
   - elm-package install --yes
 
-script: npm test
+script: yarn test
