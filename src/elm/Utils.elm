@@ -6,23 +6,34 @@ import Json.Decode as Json
 import Regex exposing (find, HowMany, regex, Match)
 
 
--- | Get Key from youtube URL
+{-| Get Key from youtube URL
+-}
 getKey : String -> Maybe String
 getKey url =
     let
         listMatched : List Regex.Match
         listMatched =
-            find Regex.All (regex "v=([-A-z0-9]+)") url
+            find Regex.All (regex "v=([-\\w]+)|youtu.be/([-\\w]+)") url
+
+        regexMatch : Regex.Match
+        regexMatch =
+            listMatched
+                |> List.head
+                |> Maybe.withDefault ({ match = "", submatches = [], index = -1, number = -1 })
     in
-        listMatched
-            |> List.head
-            |> Maybe.withDefault (Regex.Match "" [] -1 -1)
-            |> (.submatches)
-            |> List.head
-            |> Maybe.withDefault Nothing
+        case regexMatch |> (.submatches) of
+            _ :: (Just x) :: _ ->
+                Just x
+
+            (Just x) :: _ ->
+                Just x
+
+            _ ->
+                Nothing
 
 
--- | Generate an embeded URL
+{-| Generate an embeded URL
+-}
 getEmbedUrl : String -> String
 getEmbedUrl url =
     "https://www.youtube.com/embed/" ++ url

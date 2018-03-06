@@ -8,3 +8,5 @@ src/elm/Database.elm
 .tern-port
 /utils/temp_date.yaml
 /utils/temp_data.yaml
+.mypy_cache
+*.log

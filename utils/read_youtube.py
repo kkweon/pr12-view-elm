@@ -1,8 +1,8 @@
-import requests
 import datetime
 import os
-
 from typing import Dict
+
+import requests
 
 
 class Data(object):

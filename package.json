@@ -1,36 +1,37 @@
 {
-    "name": "pr-12",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "build": "webpack --optimize-minimize",
-        "start": "yarn elm && webpack-dev-server --inline --hot",
-        "test": "elm-test",
-        "elm": "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
-        "gh-page": "yarn elm && yarn run build && ghp-import public/ --push --force"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "bootstrap": "4.0.0-beta.2",
-        "css-loader": "^0.28.7",
-        "elm-webpack-loader": "^4.3.1",
-        "extract-text-webpack-plugin": "^3.0.0",
-        "file-loader": "^1.1.6",
-        "font-awesome": "^4.7.0",
-        "html-webpack-plugin": "^2.30.1",
-        "jquery": "^3.2.1",
-        "node-sass": "^4.5.3",
-        "popper": "^1.0.1",
-        "popper.js": "^1.12.9",
-        "postcss-cssnext": "^3.0.2",
-        "postcss-import": "^11.0.0",
-        "postcss-loader": "^2.0.8",
-        "sass-loader": "^6.0.6",
-        "style-loader": "^0.18.2",
-        "url-loader": "^0.6.2",
-        "webpack": "^3.6.0",
-        "webpack-dev-server": "^2.8.2"
-    }
+  "name": "pr-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --optimize-minimize",
+    "start": "yarn elm && webpack-dev-server --inline --hot",
+    "test": "elm-test",
+    "elm":
+      "python utils/read_data.py --data data.yaml --target src/elm/Database.elm",
+    "gh-page": "yarn elm && yarn run build && ghp-import public/ --push --force"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "4.0.0-beta.2",
+    "css-loader": "^0.28.7",
+    "elm-webpack-loader": "^4.3.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^1.1.6",
+    "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "popper": "^1.0.1",
+    "popper.js": "^1.12.9",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
 }
