@@ -4,6 +4,9 @@
 Hosted at https://kkweon.github.io/pr12
 
 * What is PR-12?
+
+  #+ATTR_HTML: title="Greenkeeper badge"
+  [[https://greenkeeper.io/][file:https://badges.greenkeeper.io/kkweon/pr12.svg]]
 PR-12 is the reading/study group organized in [[https://www.facebook.com/groups/TensorFlowKR/][Tensorflow KR Facebook Group]].
 The objective is to read/discuss deep learning papers every week hosted in [[https://github.com/terryum/awesome-deep-learning-papers][Awesome Deep Learning Papers]].
 Current playlist is hosted in the [[https://www.youtube.com/playlist?list=PLlMkM4tgfjnJhhd4wn5aj8fVTYJwIpWkS][Youtube playlist]]. I found it was a bit annoying to quickly look up a video, so I created the helper application to explore quickly.
