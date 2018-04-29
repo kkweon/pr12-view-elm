@@ -61,4 +61,5 @@ module.exports = {
     port: 9000,
     open: true,
   },
+  mode: "development",
 };
