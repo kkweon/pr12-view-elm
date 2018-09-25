@@ -1,9 +1,9 @@
-module Utils exposing (..)
+module Utils exposing (getEmbedUrl, getKey, onKeyDown)
 
 import Html.Styled exposing (Attribute)
-import Html.Styled.Events exposing (on, keyCode)
+import Html.Styled.Events exposing (keyCode, on)
 import Json.Decode as Json
-import Regex exposing (find, HowMany, regex, Match)
+import Regex exposing (Match, find)
 
 
 {-| Get Key from youtube URL
@@ -11,25 +11,29 @@ import Regex exposing (find, HowMany, regex, Match)
 getKey : String -> Maybe String
 getKey url =
     let
+        youtubeIdRegex : Regex.Regex
+        youtubeIdRegex =
+            Maybe.withDefault Regex.never <| Regex.fromString "v=([-\\w]+)|youtu.be/([-\\w]+)"
+
         listMatched : List Regex.Match
         listMatched =
-            find Regex.All (regex "v=([-\\w]+)|youtu.be/([-\\w]+)") url
+            find youtubeIdRegex url
 
         regexMatch : Regex.Match
         regexMatch =
             listMatched
                 |> List.head
-                |> Maybe.withDefault ({ match = "", submatches = [], index = -1, number = -1 })
+                |> Maybe.withDefault { match = "", submatches = [], index = -1, number = -1 }
     in
-        case regexMatch |> (.submatches) of
-            _ :: (Just x) :: _ ->
-                Just x
+    case regexMatch |> .submatches of
+        _ :: (Just x) :: _ ->
+            Just x
 
-            (Just x) :: _ ->
-                Just x
+        (Just x) :: _ ->
+            Just x
 
-            _ ->
-                Nothing
+        _ ->
+            Nothing
 
 
 {-| Generate an embeded URL

@@ -1,7 +1,7 @@
-module Update exposing (..)
+module Update exposing (Msg(..), update)
 
-import Model exposing (Model)
 import Database exposing (Video)
+import Model exposing (Model)
 
 
 type Msg
@@ -16,19 +16,30 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         InputQuery query ->
-            { model | query = query } ! []
+            ( { model | query = query }, Cmd.none )
 
         ClickVideo video ->
-            { model | currentVideo = Just video, focus = False } ! []
+            ( { model | currentVideo = Just video, focus = False }
+            , Cmd.none
+            )
 
         ClearInput ->
-            { model | query = "" } ! []
+            ( { model | query = "" }
+            , Cmd.none
+            )
 
         FocusQuery ->
-            { model | focus = True } ! []
+            ( { model | focus = True }
+            , Cmd.none
+            )
 
         OnKeyDown key ->
             if key == 27 then
-                { model | query = "" } ! []
+                ( { model | query = "" }
+                , Cmd.none
+                )
+
             else
-                model ! []
+                ( model
+                , Cmd.none
+                )

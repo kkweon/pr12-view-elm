@@ -1,4 +1,4 @@
-module Model exposing (..)
+module Model exposing (Model, init, initModel)
 
 import Database exposing (Video, videoList)
 
@@ -12,7 +12,10 @@ type alias Model =
 
 
 initModel : Model
-initModel = Model "" videoList Nothing True
+initModel =
+    Model "" videoList Nothing True
 
-init : (Model, Cmd msg)
-init = initModel ! []
+
+init : ( Model, Cmd msg )
+init =
+    ( initModel, Cmd.none )

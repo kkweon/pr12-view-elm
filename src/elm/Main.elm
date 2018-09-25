@@ -1,16 +1,21 @@
-module Main exposing (..)
+module Main exposing (main)
 
+import Browser
 import Html exposing (..)
-import View exposing (view)
-import Update exposing (update)
-import Model exposing (init)
 import Html.Styled exposing (toUnstyled)
+import Model exposing (init)
+import Update exposing (update)
+import View exposing (view)
 
 
-main : Program Never Model.Model Update.Msg
+type alias Flags =
+    Int
+
+
+main : Program Flags Model.Model Update.Msg
 main =
-    Html.program
-        { init = init
+    Browser.element
+        { init = \_ -> init
         , view = view >> toUnstyled
         , update = update
         , subscriptions = \_ -> Sub.none
