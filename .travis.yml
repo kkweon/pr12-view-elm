@@ -9,6 +9,5 @@ cache:
 
 before_script:
   - yarn global add elm elm-test
-  - elm-package install --yes
 
 script: yarn test
