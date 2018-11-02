@@ -1,12 +1,12 @@
-module View exposing (..)
+module View exposing (view)
 
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (..)
-import Update exposing (Msg)
 import Model exposing (Model)
+import Update exposing (Msg(..))
 import View.ListVideo exposing (listView)
 import View.VideoScreen exposing (videoScreen)
-import Update exposing (Msg(..))
+
 
 
 -- View

@@ -1,0 +1,392 @@
+- id: PR-000
+  title: PR000: 논문 읽기 각오를 다집니다.
+  speaker:
+  link: https://www.youtube.com/watch?v=auKdde7Anr8
+- id: PR-001
+  title: PR-001: Generative adversarial nets by Jaejun Yoo (2017/4/13)
+  speaker:
+  link: https://www.youtube.com/watch?v=L3hz57whyNw
+- id: PR-002
+  title: PR-002: Deformable Convolutional Networks (2017)
+  speaker:
+  link: https://www.youtube.com/watch?v=RRwaz0fBQ0Y
+- id: PR-003
+  title: PR-003:Learning phrase representations using RNN encoder-decoder for statistical machine translation
+  speaker:
+  link: https://www.youtube.com/watch?v=_Dp8u97_rQ0
+- id: PR-004
+  title: PR-004: Image Super-Resolution Using Deep Convolutional Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=1jGr_OFyfa0
+- id: PR-005
+  title: PR-005: Playing Atari with Deep Reinforcement Learning (NIPS 2013 Deep Learning Workshop)
+  speaker:
+  link: https://www.youtube.com/watch?v=V7_cNTfm2i8
+- id: PR-006
+  title: PR-006: Neural Turing Machine
+  speaker:
+  link: https://www.youtube.com/watch?v=2wbDiZCWQtY
+- id: PR-007
+  title: PR-007:  Deep Photo Style Transfer
+  speaker:
+  link: https://www.youtube.com/watch?v=YF6nLVDlznE
+- id: PR-008
+  title: PR-008: Reverse Classification Accuracy(역분류 정확도)
+  speaker:
+  link: https://www.youtube.com/watch?v=jbnjzyJDldA
+- id: PR-009
+  title: PR-009: Distilling the Knowledge in a Neural Network (Slide: English, Speaking: Korean)
+  speaker:
+  link: https://www.youtube.com/watch?v=tOItokBZSfU
+- id: PR-010
+  title: PR-010: Auto-Encoding Variational Bayes, ICLR 2014
+  speaker:
+  link: https://www.youtube.com/watch?v=KYA-GEhObIs
+- id: PR-011
+  title: PR-011: Spatial Transformer Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=Rv3osRZWGbg
+- id: PR-012
+  title: PR-012: Faster R-CNN : Towards Real-Time Object Detection with Region Proposal Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=kcPAGIgBGRs
+- id: PR-013
+  title: PR-013: Domain Adversarial Training of Neural Network
+  speaker:
+  link: https://www.youtube.com/watch?v=n2J7giHrS-Y
+- id: PR-014
+  title: PR-014: On Human Motion Prediction using RNNs (2017)
+  speaker:
+  link: https://www.youtube.com/watch?v=Y1loN3Sc4Dk
+- id: PR-015
+  title: PR-015:Convolutional Neural Networks for Sentence Classification
+  speaker:
+  link: https://www.youtube.com/watch?v=IRB2vXSet2E
+- id: PR-016
+  title: PR-016: You only look once: Unified, real-time object detection
+  speaker:
+  link: https://www.youtube.com/watch?v=eTDcoeqj1_w
+- id: PR-017
+  title: PR-017: Neural Architecture Search with Reinforcement Learning
+  speaker:
+  link: https://www.youtube.com/watch?v=XP3vyVrrt3Q
+- id: PR-018
+  title: PR-018: A Simple Neural Network Module for Relational Reasoning (DeepMind)
+  speaker:
+  link: https://www.youtube.com/watch?v=Lb1PVpFp9F8
+- id: PR-019
+  title: PR-019: Continuous Control with Deep Reinforcement Learning
+  speaker:
+  link: https://www.youtube.com/watch?v=h2WSVBAC1t4
+- id: PR-020
+  title: PR-020: Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification
+  speaker:
+  link: https://www.youtube.com/watch?v=absOinFeGv0
+- id: PR-021
+  title: PR-021: Batch Normalization (language: korean)
+  speaker:
+  link: https://www.youtube.com/watch?v=TDx8iZHwFtM
+- id: PR-022
+  title: PR-022: InfoGAN (OpenAI)
+  speaker:
+  link: https://www.youtube.com/watch?v=_4jbgniqt_Q
+- id: PR-023
+  title: PR-023: YOLO9000: Better, Faster, Stronger
+  speaker:
+  link: https://www.youtube.com/watch?v=6fdclSGgeio
+- id: PR-024
+  title: PR-024: Pixel Recurrent Neural Network
+  speaker:
+  link: https://www.youtube.com/watch?v=BvcwEz4VPIQ
+- id: PR-025
+  title: PR-025: Learning with side information through modality hallucination (2016)
+  speaker:
+  link: https://www.youtube.com/watch?v=KdRo7ATNs9g
+- id: PR-026
+  title: PR-026: Notes for CVPR Machine Learning Session
+  speaker:
+  link: https://www.youtube.com/watch?v=ZdPBkPGfRSk
+- id: PR-027
+  title: PR-027:GloVe - Global vectors for word representation
+  speaker:
+  link: https://www.youtube.com/watch?v=uZ2GtEe-50E
+- id: PR-028
+  title: PR-028: Densely Connected Convolutional Networks (CVPR 2017, Best Paper Award) by Gao Huang et al.
+  speaker:
+  link: https://www.youtube.com/watch?v=fe2Vn0mwALI
+- id: PR-029
+  title: PR-029: Apprenticeship Learning via Inverse Reinforcement Learning
+  speaker:
+  link: https://www.youtube.com/watch?v=AXi4s3aFN6M
+- id: PR-030
+  title: PR-030: Photo-Realistic Single Image Super Resolution Using a Generative Adversarial Network
+  speaker:
+  link: https://www.youtube.com/watch?v=nGPMKnoJTcI
+- id: PR-031
+  title: PR-031: Learning to learn by gradient descent by gradient descent
+  speaker:
+  link: https://www.youtube.com/watch?v=p55H46RiZ6k
+- id: PR-032
+  title: PR-032: Deep Visual-Semantic Alignments for Generating Image Descriptions
+  speaker:
+  link: https://www.youtube.com/watch?v=Q-Cm7nw85iE
+- id: PR-033
+  title: PR-033: PVANet: Lightweight Deep Neural Networks for Real-time Object Detection
+  speaker:
+  link: https://www.youtube.com/watch?v=TYDGTnxUGHQ
+- id: PR-034
+  title: PR-034: Inception and Xception
+  speaker:
+  link: https://www.youtube.com/watch?v=V0dLhyg5_Dw
+- id: PR-035
+  title: PR-035: Understanding Black-box Predictions via Influence Functions (2017)
+  speaker:
+  link: https://www.youtube.com/watch?v=xlmlY8WHjkU
+- id: PR-036
+  title: PR-036: Learning to Remember Rare Events
+  speaker:
+  link: https://www.youtube.com/watch?v=S_fbBYbXypc
+- id: PR-037
+  title: PR-037: Ask me anything: Dynamic memory networks for natural language processing
+  speaker:
+  link: https://www.youtube.com/watch?v=oxSrjuspQEs
+- id: PR-038
+  title: PR-038: Explaining and Harnessing Adversarial Examples
+  speaker:
+  link: https://www.youtube.com/watch?v=7hRO2bS810M
+- id: PR-039
+  title: PR-039: Dropout as a Bayesian approximation
+  speaker:
+  link: https://www.youtube.com/watch?v=aU91bDGmy7I
+- id: PR-040
+  title: PR-040: WaveNet - A Generative Model for Raw Audio
+  speaker:
+  link: https://www.youtube.com/watch?v=GyQnex_DK2k
+- id: PR-041
+  title: PR-041: Show and Tell: A Neural Image Caption Generator
+  speaker:
+  link: https://www.youtube.com/watch?v=BrmCnoYhQb4
+- id: PR-042
+  title: PR-042: Adam: A Method for Stochastic Optimization
+  speaker:
+  link: https://www.youtube.com/watch?v=KN120w3PZIA
+- id: PR-043
+  title: PR-043: HyperNetworks
+  speaker:
+  link: https://www.youtube.com/watch?v=-tUQXSdEsMk
+- id: PR-044
+  title: PR-044: MobileNet
+  speaker:
+  link: https://www.youtube.com/watch?v=7UoOFKcyIvM
+- id: PR-045
+  title: PR-045: DeepLab: Semantic Image Segmentation
+  speaker:
+  link: https://www.youtube.com/watch?v=JiC78rUF4iI
+- id: PR-046
+  title: PR-046: Deep Knowledge Tracing
+  speaker:
+  link: https://www.youtube.com/watch?v=8hdY6Jns5-k
+- id: PR-047
+  title: PR047: Learning Deep Features for Discriminative Localization
+  speaker:
+  link: https://www.youtube.com/watch?v=-Z1NIzLxgRU
+- id: PR-048
+  title: PR-048: Towards Principled Methods for Training Generative Adversarial Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=RlAgB0Ooxaw
+- id: PR-049
+  title: PR-049: Attention is All You Need
+  speaker:
+  link: https://www.youtube.com/watch?v=6zGgVIlStXs
+- id: PR-050
+  title: PR-050: Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting
+  speaker:
+  link: https://www.youtube.com/watch?v=3cFfCM4CXws
+- id: PR-051
+  title: PR-051: Conditional Generative Adversarial Nets
+  speaker:
+  link: https://www.youtube.com/watch?v=iCgT8G4PkqI
+- id: PR-053
+  title: PR-053: Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization
+  speaker:
+  link: https://www.youtube.com/watch?v=faGsrPX1yFM
+- id: PR-054
+  title: PR-054: ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices
+  speaker:
+  link: https://www.youtube.com/watch?v=pNuBdj53Hbc
+- id: PR-055
+  title: PR-055: Neural Machine Translation by Jointly Learning to Align and Translate
+  speaker:
+  link: https://www.youtube.com/watch?v=upskBSbA9cA
+- id: PR-056
+  title: PR-056: Capsule Network
+  speaker:
+  link: https://www.youtube.com/watch?v=_YT_8CT2w_Q
+- id: PR-057
+  title: PR-057: Mask R-CNN
+  speaker:
+  link: https://www.youtube.com/watch?v=RtSZALC9DlU
+- id: PR-058
+  title: PR-058: The Consciousness Prior
+  speaker:
+  link: https://www.youtube.com/watch?v=7fIAdhl0KYc
+- id: PR-059
+  title: PR-059: Style Transfer from Non-Parallel Text by Cross-Alignment
+  speaker:
+  link: https://www.youtube.com/watch?v=w-P2V2LlrHg
+- id: PR-060
+  title: PR-060: Deep Neural Networks for YouTube Recommendations
+  speaker:
+  link: https://www.youtube.com/watch?v=V6zixdCIOqw
+- id: PR-061
+  title: PR-061: Understanding Deep Learning Requires Rethinking Generalization
+  speaker:
+  link: https://www.youtube.com/watch?v=UxJNG7ENRNg
+- id: PR-062
+  title: PR-062: Deep Learning: A Critical Appraisal (2018)
+  speaker:
+  link: https://www.youtube.com/watch?v=6hg5d10SZr0
+- id: PR-063
+  title: PR-063 Peephole: Predicting Network Performance Before Training
+  speaker:
+  link: https://www.youtube.com/watch?v=ZO4bXgdcCQA
+- id: PR-064
+  title: PR-064: Wide&Deep Learning for Recommender Systems
+  speaker:
+  link: https://www.youtube.com/watch?v=hKoJPqWLrI4
+- id: PR-065
+  title: PR-065 : High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs
+  speaker:
+  link: https://www.youtube.com/watch?v=_5ofbwltEKU
+- id: PR-066
+  title: PR-066: Don't decay the learning rate, increase the batch size
+  speaker:
+  link: https://www.youtube.com/watch?v=jFpO-E4RPhQ
+- id: PR-067
+  title: PR-067: Audio Super Resolution using Neural Nets
+  speaker:
+  link: https://www.youtube.com/watch?v=iqN08EPMjSs
+- id: PR-068
+  title: PR-068: DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=okyo61ZZivA
+- id: PR-069
+  title: PR-069: Efficient Neural Architecture Search via Parameter Sharing
+  speaker:
+  link: https://www.youtube.com/watch?v=fbCcJaSQPPA
+- id: PR-070
+  title: PR-070: SafetyNets: Verifiable Execution of Deep Neural Networks on an Untrusted Cloud
+  speaker:
+  link: https://www.youtube.com/watch?v=CtaPFqq8P00
+- id: PR-071
+  title: PR-071: Categorical Reparameterization with Gumbel Softmax
+  speaker:
+  link: https://www.youtube.com/watch?v=ty3SciyoIyk
+- id: PR-072
+  title: PR-072: Deep Compression
+  speaker:
+  link: https://www.youtube.com/watch?v=9mFZmpIbMDs
+- id: PR-073
+  title: PR-073: Generative Semantic Manipulation with Contrasting GAN
+  speaker:
+  link: https://www.youtube.com/watch?v=U8IpNf1b57w
+- id: PR-074
+  title: PR-074: ObamaNet: Photo-realistic lip-sync from text
+  speaker:
+  link: https://www.youtube.com/watch?v=A1o6SUsWd98
+- id: PR-075
+  title: PR-075: On Calibration of Modern Neural Networks (2017)
+  speaker:
+  link: https://www.youtube.com/watch?v=odNHEkfJAc4
+- id: PR-076
+  title: PR-076: Distributed Representations of Sentences and Documents
+  speaker:
+  link: https://www.youtube.com/watch?v=NxKpgY6sWOQ
+- id: PR-077
+  title: PR-077: SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient
+  speaker:
+  link: https://www.youtube.com/watch?v=BXODIP3QjJI
+- id: PR-078
+  title: PR-078: Net2Net: Accelerating Learning via Knowledge Transfer
+  speaker:
+  link: https://www.youtube.com/watch?v=btsZOMsyH_o
+- id: PR-079
+  title: PR-079: Synthesizing Audio with Generative Adversarial Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=UXVKSSXdwb8
+- id: PR-080
+  title: PR-080: Practical Bayesian Optimization of Machine Learning Algorithms
+  speaker:
+  link: https://www.youtube.com/watch?v=MnHCe8tGjQ8
+- id: PR-082
+  title: PR-082 Introduction to Speech Separation
+  speaker:
+  link: https://www.youtube.com/watch?v=OgNSFKeHy8k
+- id: PR-083
+  title: PR-083: Non-local Neural Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=ZM153wo3baA
+- id: PR-084
+  title: PR-084 MegDet: A Large Mini-Batch Object Detector (CVPR2018)
+  speaker:
+  link: https://www.youtube.com/watch?v=nkYFEoKQBH0
+- id: PR-085
+  title: PR-085: In-Datacenter Performance Analysis of a Tensor Processing Unit
+  speaker:
+  link: https://www.youtube.com/watch?v=7WhWkhFAIO4
+- id: PR-086
+  title: PR-086: Curriculum Learning
+  speaker:
+  link: https://www.youtube.com/watch?v=fQtuWEuwXrA
+- id: PR-087
+  title: PR-087: Spectral Normalization for Generative Adversarial Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=iXSYqohGQhM
+- id: PR-088
+  title: PR-088: Deep Variational Bayes Filters (2017)
+  speaker:
+  link: https://www.youtube.com/watch?v=uM0rQtL6_AA
+- id: PR-089
+  title: PR-089: Beyond Word Importance: Contextual Decomposition to Extract Interactions from LSTMs
+  speaker:
+  link: https://www.youtube.com/watch?v=5whGIpoLoq4
+- id: PR-090
+  title: PR-090: Representation Learning by Learning to Count
+  speaker:
+  link: https://www.youtube.com/watch?v=T7i_YKN2EY8
+- id: PR-091
+  title: PR-091: A Universal Music Translation Network
+  speaker:
+  link: https://www.youtube.com/watch?v=v1GbxpKqH8Q
+- id: PR-092
+  title: PR-092: Distributed Training of Neural Networks
+  speaker:
+  link: https://www.youtube.com/watch?v=pAH3KhVnADE
+- id: PR-094
+  title: PR-094: Model-Agnostic Meta-Learning for fast adaptation of deep networks
+  speaker:
+  link: https://www.youtube.com/watch?v=fxJXXKZb-ik
+- id: PR-095
+  title: PR-095: Modularity Matters:  Learning Invariant Relational Reasoning Tasks
+  speaker:
+  link: https://www.youtube.com/watch?v=dAGI3mlOmfw
+- id: PR-096
+  title: PR-096: Taskonomy: Disentangling Task Transfer Learning
+  speaker:
+  link: https://www.youtube.com/watch?v=WjUGrzBIDv0
+- id: PR-097
+  title: PR-097: Learning Representations for Counterfactual Inference
+  speaker:
+  link: https://www.youtube.com/watch?v=l-pcG77Hr58
+- id: PR-098
+  title: PR-098: MegaDepth: Learning Single-View Depth Prediction from Internet Photos (CVPR2018)
+  speaker:
+  link: https://www.youtube.com/watch?v=tGbMWAFMMBQ
+- id: PR-099
+  title: PR-099: MRNet-Product2Vec
+  speaker:
+  link: https://www.youtube.com/watch?v=cpCS7LBRkRU
+- id: PR-100
+  title: PR100: SeedNet
+  speaker:
+  link: https://www.youtube.com/watch?v=ksTkCecBTCY

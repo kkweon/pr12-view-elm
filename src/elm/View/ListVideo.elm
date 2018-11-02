@@ -1,13 +1,13 @@
-module View.ListVideo exposing (..)
+module View.ListVideo exposing (compareId, filterVideoList, isRelateVideo, listView, scrollOnDesktop, videoListView, videoSingleRowView)
 
 import Css exposing (..)
-import Css.Media as Media exposing (withMedia, screen, only)
+import Css.Media as Media exposing (only, screen, withMedia)
+import Database exposing (Video)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (..)
 import Html.Styled.Events exposing (..)
 import Model exposing (Model)
 import Update exposing (Msg(..))
-import Database exposing (Video)
 import View.SearchInput exposing (searchForm)
 
 
@@ -21,9 +21,9 @@ isRelateVideo query video =
                 |> String.trim
                 |> String.toLower
     in
-        [ video.title, video.speaker, video.id ]
-            |> List.map String.toLower
-            |> List.any (String.contains lowerQuery)
+    [ video.title, video.speaker, video.id ]
+        |> List.map String.toLower
+        |> List.any (String.contains lowerQuery)
 
 
 filterVideoList : String -> List Video -> List Video
@@ -53,7 +53,7 @@ scrollOnDesktop : Attribute msg
 scrollOnDesktop =
     css
         [ withMedia [ only screen [ Media.minWidth (px 900) ] ]
-            [ (overflowY auto), (maxHeight (vh 90)) ]
+            [ overflowY auto, maxHeight (vh 90) ]
         ]
 
 
@@ -80,26 +80,27 @@ videoSingleRowView model video =
         aClass =
             if isActive then
                 "list-group-item list-group-item-action text-white active"
+
             else
                 "list-group-item list-group-item-action"
 
         hide =
-            (not isActive) && (not model.focus)
+            not isActive && not model.focus
     in
-        case hide of
-            True ->
-                text ""
+    case hide of
+        True ->
+            text ""
 
-            False ->
-                a
-                    [ class aClass
-                    , css [ cursor pointer ]
-                    , onClick (ClickVideo video)
-                    ]
-                    [ div [ class "font-weight-bold" ] [ text video.title ]
-                    , div [ class "font-weight-italic" ] [ text video.id ]
-                    , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
-                    ]
+        False ->
+            a
+                [ class aClass
+                , css [ cursor pointer ]
+                , onClick (ClickVideo video)
+                ]
+                [ div [ class "font-weight-bold" ] [ text video.title ]
+                , div [ class "font-weight-italic" ] [ text video.id ]
+                , div [ class "font-weight-light" ] [ text <| "발표자: " ++ video.speaker ]
+                ]
 
 
 listView : Model -> Html Msg

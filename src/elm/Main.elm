@@ -8,11 +8,7 @@ import Update exposing (update)
 import View exposing (view)
 
 
-type alias Flags =
-    Int
-
-
-main : Program Flags Model.Model Update.Msg
+main : Program () Model.Model Update.Msg
 main =
     Browser.element
         { init = \_ -> init

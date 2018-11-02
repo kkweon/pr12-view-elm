@@ -1,19 +1,19 @@
-module View.GlyphIcons exposing (..)
+module View.GlyphIcons exposing (clearButton, faBuilder, glyphMenuIcon, glyphSearchIcon, spanBuilder)
 
 import Css exposing (..)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes
     exposing
-        ( class
+        ( attribute
+        , class
         , css
         , placeholder
         , src
-        , value
         , style
         , type_
-        , attribute
+        , value
         )
-import Html.Styled.Events exposing (onInput, onClick, onFocus, on, keyCode)
+import Html.Styled.Events exposing (keyCode, on, onClick, onFocus, onInput)
 import Model exposing (Model)
 import Update exposing (Msg(..))
 
@@ -34,7 +34,8 @@ glyphMenuIcon =
 
 
 spanBuilder : Html Msg -> Html Msg
-spanBuilder icon = span
+spanBuilder icon =
+    span
         [ class "input-group-addon border-0 bg-transparent p-0"
         , css
             [ left (Css.rem 1)
@@ -64,5 +65,6 @@ clearButton model =
             , attribute "aria-label" "Close"
             ]
             [ span [ attribute "aria-hidden" "true" ] [ text "×" ] ]
+
     else
         text ""

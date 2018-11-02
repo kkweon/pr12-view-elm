@@ -1,23 +1,23 @@
-module View.SearchInput exposing (..)
+module View.SearchInput exposing (searchForm)
 
 import Css exposing (..)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes
     exposing
-        ( class
+        ( attribute
+        , class
         , css
         , placeholder
         , src
-        , value
         , style
         , type_
-        , attribute
+        , value
         )
-import Html.Styled.Events exposing (onInput, onClick, onFocus, on, keyCode)
+import Html.Styled.Events exposing (keyCode, on, onClick, onFocus, onInput)
 import Model exposing (Model)
 import Update exposing (Msg(..))
-import View.GlyphIcons exposing (spanBuilder, glyphSearchIcon, glyphMenuIcon, clearButton)
 import Utils exposing (onKeyDown)
+import View.GlyphIcons exposing (clearButton, glyphMenuIcon, glyphSearchIcon, spanBuilder)
 
 
 searchForm : Model -> Html Msg
@@ -26,6 +26,7 @@ searchForm model =
         placeholder_text =
             if model.focus then
                 "제목 혹은 발표자 검색"
+
             else
                 "목록 보기"
 
@@ -44,11 +45,12 @@ searchForm model =
         spanIcon =
             if model.focus then
                 spanBuilder glyphSearchIcon
+
             else
                 spanBuilder glyphMenuIcon
     in
-        div [ class "input-group input-group-lg mb-3", css [ (position relative) ] ]
-            [ spanIcon
-            , inputBox
-            , clearButton model
-            ]
+    div [ class "input-group input-group-lg mb-3", css [ position relative ] ]
+        [ spanIcon
+        , inputBox
+        , clearButton model
+        ]

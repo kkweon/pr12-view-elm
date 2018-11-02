@@ -1,9 +1,9 @@
-module View.VideoScreen exposing (..)
+module View.VideoScreen exposing (getEmbedYoutube, videoScreen)
 
-import Model exposing (Model)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (..)
-import Utils exposing (getKey, getEmbedUrl)
+import Model exposing (Model)
+import Utils exposing (getEmbedUrl, getKey)
 
 
 videoScreen : Model -> Html msg
@@ -18,7 +18,7 @@ videoScreen model =
                     vid.link
                         |> getKey
             in
-                getEmbedYoutube vidKey
+            getEmbedYoutube vidKey
 
 
 getEmbedYoutube : Maybe String -> Html msg

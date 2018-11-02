@@ -3,13 +3,6 @@ import argparse
 import subprocess
 from typing import List, Dict
 
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "--data", type=str, default="./data.yaml", help="data.yaml file")
-parser.add_argument(
-    "--target", type=str, default="Database.elm", help="target.elm file")
-args = parser.parse_args()
-
 
 def read_yaml(filename: str) -> List[Dict[str, str]]:
     """Reads `data.yaml` file
@@ -79,7 +72,9 @@ type alias Video =
 
 videoList : List Video
 videoList = {}
-""".format(message)
+""".format(
+        message
+    )
 
 
 def write_file(dest: str, data: str) -> None:
@@ -102,7 +97,16 @@ def format_elm_file(target_elm: str) -> None:
         print("Success!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--data", type=str, default="./data.yaml", help="data.yaml file"
+    )
+    parser.add_argument(
+        "--target", type=str, default="Database.elm", help="target.elm file"
+    )
+    args = parser.parse_args()
+
     ret = read_yaml(args.data)
     ret = ",".join(map(convert2elm, ret))
 

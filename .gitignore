@@ -10,3 +10,4 @@ src/elm/Database.elm
 /utils/temp_data.yaml
 .mypy_cache
 *.log
+__pycache__
