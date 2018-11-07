@@ -1,8 +1,9 @@
-module View.ListVideo exposing (compareId, filterVideoList, isRelateVideo, listView, scrollOnDesktop, videoListView, videoSingleRowView)
+module View.ListVideo exposing (compareId, filterVideoList, isRelatedVideo, listView, scrollOnDesktop, videoListView, videoSingleRowView)
 
 import Css exposing (..)
 import Css.Media as Media exposing (only, screen, withMedia)
 import Database exposing (Video)
+import Fuzzy exposing (Result, match)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (..)
 import Html.Styled.Events exposing (..)
@@ -13,40 +14,53 @@ import View.SearchInput exposing (searchForm)
 
 {-| If Video contains query in the title or speaker or id, return True
 -}
-isRelateVideo : String -> Video -> Bool
-isRelateVideo query video =
+isRelatedVideo : ( Video, Result ) -> Bool
+isRelatedVideo ( video, result ) =
+    result.score < 100
+
+
+
+-- { id : String
+-- , title : String
+-- , speaker : String
+-- , link : String
+-- }
+
+
+getFuzzyScore : String -> Video -> ( Video, Result )
+getFuzzyScore needle video =
     let
-        lowerQuery =
-            query
-                |> String.trim
+        targetText =
+            [ video.id, video.title, video.speaker ]
+                |> String.join " "
                 |> String.toLower
+
+        result =
+            match [ Fuzzy.movePenalty 0, Fuzzy.addPenalty 0 ] [] (String.toLower needle) targetText
     in
-    [ video.title, video.speaker, video.id ]
-        |> List.map String.toLower
-        |> List.any (String.contains lowerQuery)
+    ( video, result )
 
 
-filterVideoList : String -> List Video -> List Video
+filterVideoList : String -> List Video -> List ( Video, Result )
 filterVideoList query videoList =
     case String.isEmpty query of
         True ->
-            videoList
+            videoList |> List.map (\v -> ( v, { score = 0, matches = [] } ))
 
         False ->
-            videoList |> List.filter (isRelateVideo query)
+            videoList
+                |> List.map (getFuzzyScore query)
+                |> List.filter isRelatedVideo
 
 
-compareId : Video -> Video -> Order
-compareId a b =
-    case compare a.id b.id of
-        LT ->
-            GT
-
+compareId : ( Video, Result ) -> ( Video, Result ) -> Order
+compareId ( v1, r1 ) ( v2, r2 ) =
+    case compare r1.score r2.score of
         EQ ->
-            EQ
+            compare v1.id v2.id
 
-        GT ->
-            LT
+        x ->
+            x
 
 
 scrollOnDesktop : Attribute msg
@@ -66,8 +80,8 @@ videoListView model =
         |> div [ class "list-group", scrollOnDesktop ]
 
 
-videoSingleRowView : Model -> Video -> Html Msg
-videoSingleRowView model video =
+videoSingleRowView : Model -> ( Video, Result ) -> Html Msg
+videoSingleRowView model ( video, result ) =
     let
         isActive =
             case model.currentVideo of
