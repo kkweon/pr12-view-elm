@@ -14,7 +14,7 @@ before_script:
   - python3 -V
   - pip3 -V
   - sudo pip3 install typing pyyaml
-  - yarn global add elm elm-test@beta elm-format
+  - yarn global add elm elm-test elm-format
 
 script: yarn test
 
