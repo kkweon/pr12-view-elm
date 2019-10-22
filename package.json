@@ -33,7 +33,7 @@
     "url-loader": "^2.0.0",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "3.8.2"
   },
   "dependencies": {
     "cssnano": "^4.1.7"
